@@ -1,0 +1,9 @@
+#button-submit {
+  background-color: var(--green-success);
+  color: var(--text-white);
+}
+
+#button-submit:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}

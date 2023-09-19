@@ -1,8 +1,107 @@
-@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   font-family: "K2D", sans-serif;
   font-size: 100%;
+}
+
+input,
+textarea {
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  border: 2px solid #00000055;
+  width: 100%;
+  padding-left: 0.6rem;
+  font-size: 1.2rem;
+}
+
+input {
+  height: 3rem;
+}
+
+textarea {
+  padding-top: 0.6rem;
+  height: 7rem;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 3px solid var(--primary-color);
+}
+
+:root {
+  --primary-color: #d88729;
+  --secondary-color: #eba759;
+  --green-success: #12832b;
+  --red-cancel: #af3014;
+
+  --text-white: #fff;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  width: 10rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  color: white;
+}
+
+.body h1 {
+  font: 900 3rem 'ACME';
+}
+
+.body form {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.body form span {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.body form span:nth-child(3) {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 15em;
+  margin-top: 16px;
+}
+
+.body form span label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+form .buttons-form {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
 }

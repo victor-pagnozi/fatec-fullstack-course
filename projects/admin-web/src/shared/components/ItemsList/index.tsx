@@ -9,6 +9,8 @@ export const ItemsList = () => {
         <h2>PIZZA</h2>
         <ChevronDown />
       </div>
+
+      <div className="items"></div>
     </section>
   );
 };

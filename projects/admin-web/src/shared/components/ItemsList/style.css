@@ -2,8 +2,16 @@
   background-color: var(--color-gray);
   color: black;
   border-radius: 25px;
+  padding: 0 1.5rem;
+  cursor: pointer;
 }
 
 #items-list h2 {
   font: 800 4rem "K2D";
+}
+
+#items-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

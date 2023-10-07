@@ -1,0 +1,9 @@
+#items-list {
+  background-color: var(--color-gray);
+  color: black;
+  border-radius: 25px;
+}
+
+#items-list h2 {
+  font: 800 4rem "K2D";
+}

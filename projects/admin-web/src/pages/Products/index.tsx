@@ -1,3 +1,10 @@
+import { ItemsList } from "../../shared/components/ItemsList";
+import './style.css'
+
 export const ProductsPage = () => {
-  return <h1>Lista de produtos</h1>
-}
+  return (
+    <section id="products-list">
+      <ItemsList />
+    </section>
+  );
+};

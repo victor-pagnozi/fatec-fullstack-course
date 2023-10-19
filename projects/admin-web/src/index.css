@@ -63,3 +63,11 @@ button {
   color: white;
   background-color: var(--primary-color);
 }
+
+.centered {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}

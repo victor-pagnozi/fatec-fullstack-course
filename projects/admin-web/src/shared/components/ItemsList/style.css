@@ -1,17 +1,76 @@
-#items-list {
+#items-list,
+.menu-items {
   background-color: var(--color-gray);
   color: black;
   border-radius: 25px;
   padding: 0 1.5rem;
+  width: 80vw;
+}
+
+#items-list {
   cursor: pointer;
+  width: 100%;
 }
 
 #items-list h2 {
   font: 800 4rem "K2D";
 }
 
-#items-list > div {
+#items-list div:first-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.menu-items table {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  border: 1px solid #e79c114b;
+  overflow: hidden;
+}
+
+.menu-items table thead {
+  color: var(--primary-color);
+  font: 600 1.5rem "K2D";
+  background-color: #e79c114b;
+}
+
+.menu-items table thead tr .value-column {
+  width: 10rem;
+}
+
+.menu-items table thead tr td:last-child {
+  padding: 0 2rem;
+}
+
+.menu-items table tbody {
+  font: 900 1.4rem "K2D";
+  background-color: white;
+  border-radius: 18px;
+  height: 5rem;
+}
+
+.menu-items table tbody tr:first-child {
+  background-color: var(--color-gray);
+  border: none;
+  height: 0.1rem;
+}
+
+.menu-items table tbody tr td:nth-child(1) {
+  padding: 1rem;
+}
+
+.menu-items table tbody tr td:nth-child(2) {
+  font-size: 0.9rem;
 }

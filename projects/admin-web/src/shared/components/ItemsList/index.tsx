@@ -32,9 +32,9 @@ export const ItemsList = ({ products }: { products: any[] }) => {
                 <td colSpan={4}></td>
               </tr>
               {products.map((item) => (
-                <tr>
+                <tr key={item.name}>
                   <td>{item.name}</td>
-                  <td>{item.description}</td>
+                  <td>{item.ingredients}</td>
                   <td>R$ {(item.price / 100).toFixed(2)}</td>
                   <td className="table-actions">
                     <FileEdit />

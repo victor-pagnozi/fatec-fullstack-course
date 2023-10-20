@@ -4,12 +4,10 @@
   color: black;
   border-radius: 25px;
   padding: 0 1.5rem;
-  width: 80vw;
 }
 
 #items-list {
   cursor: pointer;
-  width: 100%;
 }
 
 #items-list h2 {
@@ -27,7 +25,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 0.5rem;
-  width: 100%;
 }
 
 .menu-items table {
@@ -36,14 +33,14 @@
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 10px;
-  border: 1px solid #e79c114b;
+  border: 1px solid #EDD7C0;
   overflow: hidden;
 }
 
 .menu-items table thead {
   color: var(--primary-color);
   font: 600 1.5rem "K2D";
-  background-color: #e79c114b;
+  background-color: #EDD7C0;
 }
 
 .menu-items table thead tr .value-column {
@@ -73,4 +70,12 @@
 
 .menu-items table tbody tr td:nth-child(2) {
   font-size: 0.9rem;
+}
+
+.table-actions svg:nth-child(2) {
+  margin-left: 0.5em;
+}
+
+.table-actions svg {
+  cursor: pointer;
 }

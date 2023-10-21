@@ -8,6 +8,7 @@ export const connection = new Sequelize({
 export async function initializeDatabase() {
   try {
     await connection.authenticate();
+    await connection.sync();
 
     console.log("Connection has been established successfully.");
   } catch (error) {

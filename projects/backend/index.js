@@ -4,25 +4,50 @@ import { Products } from "./models/products.js";
 
 const app = express();
 const port = 3000;
+app.use(express.json())
 
 await initializeDatabase();
 
 app.post("/products", async (req, res) => {
+  console.log(req.body)
   try {
     const product = await Products.create({
-      name: "Johnson",
-      ingredients: "test test",
-      price: 20,
+      name: req.body.name,
+      ingredients: req.body.ingredients,
+      price: req.body.price,
     });
 
-    // const product = await Products.destroy({
-    //   where: {id: 1}
-    // });
-
-    return res.status(201).json(product);
+    res.status(201).json(product);
   } catch (err) {
-    console.error(err);
-    res.status(400).json("Something went wrong");
+    res.status(400).json(err);
+  }
+});
+
+app.get('/products', async (req, res) => {
+  try {
+    const products = await Products.findAll();
+
+    return res.status(200).json(products);
+  } catch (err) { }
+});
+
+app.put('/products', async (req, res) => {
+  try {
+    const products = await Products.update();
+
+    return res.status(200).json(products);
+  } catch (err) { }
+});
+
+app.delete('/products/:id', async (req, res) => {
+  try {
+    await Products.destroy({
+      where: { id: req.params.id }
+    });
+
+    res.status(200).json();
+  } catch (err) {
+    res.status(500).json(err)
   }
 });
 

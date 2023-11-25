@@ -21,7 +21,7 @@ export const ProductsPage = () => {
 
   return (
     <section id="products-list">
-      <ItemsList products={products} />
+      <ItemsList products={products} loadProducts={loadProducts} />
 
       <div className="actions-products-list">
         <Link to={"/create"} className="actions-products-list-button">

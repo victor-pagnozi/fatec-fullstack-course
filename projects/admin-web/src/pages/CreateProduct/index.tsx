@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { ButtonCancel } from "../../shared/components/ButtonCancel";
 import { ButtonSubmit } from "../../shared/components/ButtonSubmit";
@@ -18,18 +19,22 @@ export const CreateProductPage = () => {
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const productsAsString = window.localStorage.getItem("products") ?? "[]";
+    try {
+      await fetch("http://localhost:3000/products", {
+        method: "POST",
+        body: JSON.stringify(product),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    const products = JSON.parse(productsAsString);
-
-    window.localStorage.setItem(
-      "products",
-      JSON.stringify([...products, product])
-    );
-    return window.location.replace("/");
+      return window.location.replace("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

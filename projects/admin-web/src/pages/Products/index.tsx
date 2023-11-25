@@ -7,10 +7,16 @@ import { Link } from "react-router-dom";
 export const ProductsPage = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const productsAsString = window.localStorage.getItem("products") ?? "[]";
+  async function loadProducts() {
+    const response = await fetch("http://localhost:3000/products");
 
-    setProducts(JSON.parse(productsAsString) ?? []);
+    const data = await response.json();
+
+    setProducts(data);
+  }
+
+  useEffect(() => {
+    loadProducts();
   }, []);
 
   return (
